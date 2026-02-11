@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Website</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Software Developer";
+    color:  rgb(177, 54, 177);
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid  rgb(177, 54, 177);
+    }
+}
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Engineering student";
+    }
+    41%, 60%{
+        content: "Front developer";
+    }
+   
+}
+
+html{
+    scroll-behavior:smooth;
+    font-size:62.5%;
+}
+
+body{
+    background:black;
+    color:white;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:1.5rem 9%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+}
+
+.logo{
+    font-size:3rem;
+    color:rgb(177,54,177);
+    font-weight:700;
+}
+
+nav a{
+    margin-left:3rem;
+    font-size:1.6rem;
+    color:rgb(177,54,177);
+    transition:0.3s;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color:white;
+        text-decoration: none;
+
+}
+nav a{
+    font-size: 1.8rem;
+    color:rgb(177,54,177);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+        text-decoration: none;
+
+}
+
+
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid  rgb(177, 54, 177);
+        border-bottom: 3px solid  rgb(177, 54, 177);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid  rgb(177, 54, 177);
+    }
+}
+
+.section{
+    min-height:100vh;
+    padding:10rem 9% 5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.section-card{
+    width:900px;
+    padding:40px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    text-align:center;
+    animation:float 4s ease-in-out infinite;
+    box-shadow:0 25px 50px rgba(0,0,0,0.3);
+}
+
+.section-card h2{
+    font-size:3.2rem;
+    margin-bottom:20px;
+    color:rgb(177,54,177);
+}
+
+.section-card p{
+    font-size:1.7rem;
+    line-height:1.8;
+}
+
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+
+
+.home{
+    display:flex;
+    gap:8rem;
+    align-items:center;
+}
+
+.home-img img{
+    width:500px;
+
+    border-radius:20px;
+    box-shadow:0 10px 30px black;
+}
+
+.home-content h1{
+    font-size:5.5rem;
+}
+
+.home-content h3{
+    font-size:3rem;
+    margin:1rem 0;
+}
+
+.home-content p{
+    font-size:1.6rem;
+}
+
+span{
+    color:rgb(177,54,177);
+}
+
+.social-icons a{
+    display:inline-flex;
+    width:4rem;
+    height:4rem;
+    border:2px solid rgb(177,54,177);
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+    color:rgb(177,54,177);
+    margin:2rem 1rem 0 0;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    background:rgb(177,54,177);
+    color:black;
+    transform:scale(1.2);
+}
+
+.skills span{
+    display:inline-block;
+    margin:10px;
+    padding:10px 20px;
+    border-radius:25px;
+    border:2px solid rgb(177,54,177);
+    font-size:1.5rem;
+    transition:0.3s;
+}
+
+.skills span:hover{
+    background:rgb(177,54,177);
+    color:black;
+    transform:scale(1.1);
+}
+
+@media(max-width:900px){
+    .home{
+        flex-direction:column;
+        text-align:center;
+    }
+    .section-card{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Harini's Portfolio</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#Internship">Internship</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<section class="section home" id="home">
+    <div class="home-img">
+            <img src="c:\Users\hp\Downloads\IMG_20260211_203301.png"alt="">
+    </div>
+    <div class="home-content">
+        <h1>Hi, It's <span>Harini S</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+        <p>Computer Science and Engineering student.</p>
+        <div class="social-icons">
+                <a href="https://www.linkedin.com/in/harini-s-15921536b/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Harinisrikanth10"><i class="fa-brands fa-github"></i></a>
+                <a href="harinisrikanth10@gmail.com"><i class="fa-brands fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="section-card">
+        <h2>About Me</h2>
+        <p>
+            I am a first-year Computer Science Engineering student, a passionate and
+            dedicated individual who loves problem-solving, coding, and creative designing.
+            With a curious mind and a positive attitude, I strive to learn and grow continuously.
+        </p>
+    </div>
+</section>
+
+<section class="section" id="skills">
+    <div class="section-card">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Javascript</span>
+            <span>C</span>
+            <span>C++</span>
+
+            <span>Python</span>
+            <span>Java</span>
+
+            <span>Problem Solving</span>
+            <span>Creative Designing</span>
+            <span>Git & GitHub</span>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section" id="education">
+    <div class="section-card">
+        <h2>Education</h2>
+        <p>
+            Bachelor of Engineering – Computer Science and Engineering<br>
+            First Year Undergraduate Student
+        </p>
+    </div>
+</section>
+
+<section class="section" id="projects">
+    <div class="section-card">
+        <h2>Projects</h2>
+        <p>
+            • Portfolio Website<br>
+            • Tic Tac Toe (C++)<br>
+            • Calculator App<br>
+            • Image Gallery Website
+        </p>
+    </div>
+</section>
+<section class="section" id="Internship">
+    <div class="section-card">
+        <h2>Internship</h2>
+        <p>->Front end Intern at CodeAlpha<br>
+            ->C++ Intern at Codsoft<br>
+            ->Google AI-ML Intern
+        </p>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="section-card">
+        <h2>Contact</h2>
+        <h2>
+            Phone:7010933462
+        </h2>
+        <h2><a href="https://www.linkedin.com/in/harini-s-15921536b/"><i class="fa-brands fa-linkedin"></i></a>Linked in</h2>
+        <h2><a href="https://github.com/Harinisrikanth10"><i class="fa-brands fa-github"></i></a>Github</h2>
+        
+    </div>
+</section>
+<center>
+        <h2>
+            &copy All rights reserved.
+        </h2>
+</center>
+</body>
+</html>
